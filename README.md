@@ -1,23 +1,18 @@
-# Hello world docker action
+# Lerna publish action
 
-This action prints "Hello World" to the log or "Hello" + the name of a person to greet. To learn how this action was built, see "[Creating a Docker container action](https://help.github.com/en/articles/creating-a-docker-container-action)" in the GitHub Help documentation.
+This action publishes repositories managed with Lerna or to other registry
+
+## Requirements
+
+Requires Lerna as a dependency.
 
 ## Inputs
 
-### `who-to-greet`
+TODO: Flesh out
 
-**Required** The name of the person to greet. Default `"World"`.
-
-## Outputs
-
-### `time`
-
-The time we greeted you.
+- AUTH_TOKEN
+- REGISTRY
 
 ## Example usage
 
-```yaml
-uses: actions/hello-world-docker-action@master
-with:
-  who-to-greet: 'Mona the Octocat'
-```
+TODO

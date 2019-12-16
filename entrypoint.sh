@@ -1,5 +1,10 @@
-#!/bin/sh -l
+#!/bin/bash
 
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
+set -euo pipefail
+
+BUMP_VERSION=$1
+AUTH_TOKEN_STRING=$2
+REGISTRY=$3
+
+echo $AUTH_TOKEN_STRING >> ~/.npmrc
+node_modules/.bin/lerna publish --registry=$REGISTRY --yes $BUMP_VERSION

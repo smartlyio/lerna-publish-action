@@ -1,15 +1,20 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'Lerna publish action'
+description: 'Publish repositories managed with Lerna'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  bump:
+    description: "Semver value to bump. Values major|minor|patch"
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  auth-token-string:
+    description: "Registry's auth token string that injected to .npmrc before running lerna"
+    required: true
+  registry:
+    description: "Registery where to publish"
+    default: "https://registry.npmjs.org/"
+outputs: {}
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.bump }}
+    - ${{ inputs.auth-token }}
+    - ${{ inputs.registry }}
