@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM node:12.13-alpine
 
 LABEL version="1.0.0"
 LABEL repository="http://github.com/smartlyio/lerna-publish-action"
