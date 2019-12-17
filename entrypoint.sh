@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -xeuo pipefail
 
 BUMP_VERSION=$1
 AUTH_TOKEN_STRING=$2
