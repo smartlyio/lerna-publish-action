@@ -8,7 +8,7 @@ LABEL com.github.actions.name="Lerna publish action"
 LABEL com.github.actions.description="Publish repositories using lerna"
 LABEL com.github.actions.icon="package"
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash git
 
 COPY entrypoint.sh /entrypoint.sh
 
