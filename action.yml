@@ -16,5 +16,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.bump }}
-    - ${{ inputs.auth-token }}
+    - ${{ inputs.auth-token-string }}
     - ${{ inputs.registry }}
