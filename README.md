@@ -82,6 +82,8 @@ jobs:
 ```
 
 ### Fetch bump version from label using smartlyio/version-checking-action
+
+``` yaml
 name: Lerna publish with label
 
 on:
@@ -112,4 +114,4 @@ jobs:
           bump: ${{ steps.check-version.outputs.VERSION_LOWER }}
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
+```
