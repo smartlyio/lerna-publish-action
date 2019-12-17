@@ -1,6 +1,6 @@
 # Lerna publish action
 
-This action publishes packages managed with Lerna or to other registry.
+This action publishes packages managed with Lerna to npm or other registry.
 
 ## Requirements
 
