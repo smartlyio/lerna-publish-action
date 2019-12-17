@@ -8,7 +8,10 @@ REGISTRY=$2
 EMAIL=${EMAIL:-"bot@lerna-publish-action"}
 USERNAME=${USERNAME:-"lerna publish action bot"}
 
-echo $AUTH_TOKEN_STRING >> ~/.npmrc
+if [ -n "$AUTH_TOKEN_STRING" ]
+then
+    echo $AUTH_TOKEN_STRING >> ~/.npmrc
+fi
 
 # Setup git
 
