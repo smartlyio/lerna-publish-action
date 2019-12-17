@@ -4,9 +4,6 @@ inputs:
   bump:
     description: "Semver value to bump. Values major|minor|patch"
     required: true
-  auth-token-string:
-    description: "Registry's auth token string that injected to .npmrc before running lerna"
-    required: true
   registry:
     description: "Registery where to publish"
     default: "https://registry.npmjs.org/"
@@ -16,5 +13,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.bump }}
-    - ${{ inputs.auth-token-string }}
     - ${{ inputs.registry }}
