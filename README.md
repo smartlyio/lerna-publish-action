@@ -4,7 +4,8 @@ This action publishes packages managed with Lerna to npm or other registry.
 
 ## Requirements
 
-Requires Lerna as a dependency.
+Requires Lerna as a dependency. Make sure it is defined in your `package.json` and installed to
+`node_modules/.bin/lerna` before running this action.
 
 ## Inputs
 
