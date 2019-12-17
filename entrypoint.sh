@@ -3,8 +3,7 @@
 set -euo pipefail
 
 BUMP_VERSION=$1
-AUTH_TOKEN_STRING=$2
-REGISTRY=$3
+REGISTRY=$2
 
 EMAIL=${EMAIL:-"bot@lerna-publish-action"}
 USERNAME=${USERNAME:-"lerna publish action bot"}
