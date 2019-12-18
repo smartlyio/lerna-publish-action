@@ -26,4 +26,6 @@ echo "unsafe-perm = true" >> ~/.npmrc
 git config user.email "$EMAIL"
 git config user.name "$USERNAME"
 
+ls -l
+
 node_modules/.bin/lerna publish $LERNA_ARGUMENTS --registry=$REGISTRY --yes $BUMP_VERSION
