@@ -7,18 +7,15 @@ This action publishes packages managed with Lerna to npm or other registry.
 Requires Lerna as a dependency. Make sure it is defined in your `package.json` and installed to
 `node_modules/.bin/lerna` before running this action.
 
-## Inputs
+## Environment variables
 
 - `BUMP_VERSION` (**required**): Semantic version to bump. Possible values: `major|minor|patch`.
 - `REGISTRY` (default: https://registry.npmjs.org): Custom registry where to publish the packages.
-
-## Environment variables
-
+- `EMAIL` (default: `bot@lerna-publish-action`): Email to use in lerna commits.
+- `USERNAME` (default: `lerna publish action bot`): User name to use in lerna commits.
 - `NPM_AUTH_TOKEN`: NPM auth token when publishing to npm
 - `AUTH_TOKEN_STRING`: Custom auth token that is injected to `.npmrc`. Used when connecting to custom registry that
   support ":_authToken". See [Publish to custom registry](#publish-to-custom-registry) for an example.
-- `EMAIL` (default: `bot@lerna-publish-action`): Email to use in lerna commits.
-- `USERNAME` (default: `lerna publish action bot`): User name to use in lerna commits.
 
 ## Example usage
 
@@ -45,9 +42,8 @@ jobs:
         run: |
           yarn install
       - uses: smartlyio/lerna-publish-action@v1
-        with:
-          bump: major
         env:
+          BUMP_VERSION: major
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 ```
 
@@ -74,10 +70,9 @@ jobs:
         run: |
           yarn install
       - uses: smartlyio/lerna-publish-action@v1
-        with:
-          bump: major
-          registry: "https://npm.fury.io/smartly"
         env:
+          REGISTRY: "https://npm.fury.io/smartly"
+          BUMP_VERSION: major
           AUTH_TOKEN_STRING: ${{ format('//npm.fury.io/:_authToken={0}', secrets.GEMFURY_TOKEN) }}
 ```
 
@@ -110,8 +105,7 @@ jobs:
         run: |
           yarn install
       - uses: smartlyio/lerna-publish-action@v1
-        with:
-          bump: ${{ steps.check-version.outputs.VERSION_LOWER }}
         env:
+          BUMP_VERSION: ${{ steps.check-version.outputs.VERSION_LOWER }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 ```

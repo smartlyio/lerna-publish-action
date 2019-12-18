@@ -2,11 +2,15 @@
 
 set -euo pipefail
 
-BUMP_VERSION=$1
-REGISTRY=$2
-
+REGISTRY=${REGISTRY:-"https://registry.npmjs.org"}
 EMAIL=${EMAIL:-"bot@lerna-publish-action"}
 USERNAME=${USERNAME:-"lerna publish action bot"}
+
+if [ -z "$BUMP_VERSION" ]
+then
+    echo "BUMP_VERSION environment variable not specified."
+    exit -1
+fi
 
 if [ -n "$AUTH_TOKEN_STRING" ]
 then
