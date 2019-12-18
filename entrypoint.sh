@@ -5,6 +5,7 @@ set -euo pipefail
 REGISTRY=${REGISTRY:-"https://registry.npmjs.org"}
 EMAIL=${EMAIL:-"bot@lerna-publish-action"}
 USERNAME=${USERNAME:-"lerna publish action bot"}
+LERNA_ARGUMENTS=${LERNA_ARGUMENTS:-""}
 
 if [ -z "$BUMP_VERSION" ]
 then
