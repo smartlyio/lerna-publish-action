@@ -18,6 +18,9 @@ then
     echo $AUTH_TOKEN_STRING >> ~/.npmrc
 fi
 
+# The script is run as root so we need to allow npm to execute scripts as root.
+echo "unsafe-perm = true" >> ~/.npmrc
+
 # Setup git
 
 git config user.email "$EMAIL"
