@@ -13,6 +13,7 @@ Requires Lerna as a dependency. Make sure it is defined in your `package.json` a
 - `REGISTRY` (default: https://registry.npmjs.org): Custom registry where to publish the packages.
 - `EMAIL` (default: `bot@lerna-publish-action`): Email to use in lerna commits.
 - `USERNAME` (default: `lerna publish action bot`): User name to use in lerna commits.
+- `LERNA_ARGUMENTS`: Extra arguments passed to lerna publish command.
 - `NPM_AUTH_TOKEN`: NPM auth token when publishing to npm
 - `AUTH_TOKEN_STRING`: Custom auth token that is injected to `.npmrc`. Used when connecting to custom registry that
   support ":_authToken". See [Publish to custom registry](#publish-to-custom-registry) for an example.

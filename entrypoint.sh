@@ -22,4 +22,4 @@ fi
 git config user.email "$EMAIL"
 git config user.name "$USERNAME"
 
-node_modules/.bin/lerna publish --registry=$REGISTRY --yes $BUMP_VERSION
+node_modules/.bin/lerna publish $LERNA_ARGUMENTS --registry=$REGISTRY --yes $BUMP_VERSION
