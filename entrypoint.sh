@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+set -xeuo pipefail
 
 REGISTRY=${REGISTRY:-"https://registry.npmjs.org"}
 EMAIL=${EMAIL:-"bot@lerna-publish-action"}
