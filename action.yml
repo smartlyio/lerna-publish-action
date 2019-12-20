@@ -11,6 +11,15 @@ inputs:
   extra_arguments:
     description: "Extra arguments for Lerna"
     required: false
+    default: ''
+  email:
+    description: "Email to use in lerna commits"
+    required: false
+    default: 'bot@lerna-publish-action'
+  username:
+    description: 'User  name to use in lerna commits'
+    required: false
+    default: 'github action'
 outputs: {}
 runs:
   using: 'docker'

@@ -2,14 +2,9 @@
 
 set -euo pipefail
 
-REGISTRY=${REGISTRY:-"https://registry.npmjs.org"}
-EMAIL=${EMAIL:-"bot@lerna-publish-action"}
-USERNAME=${USERNAME:-"lerna publish action bot"}
-LERNA_ARGUMENTS=${LERNA_ARGUMENTS:-""}
-
-if [ -z "$BUMP_VERSION" ]
+if [ -z "$INPUT_BUMP" ]
 then
-    echo "BUMP_VERSION environment variable not specified."
+    echo "bump input not specified."
     exit -1
 fi
 
@@ -23,7 +18,7 @@ echo "unsafe-perm = true" >> ~/.npmrc
 
 # Setup git
 
-git config user.email "$EMAIL"
-git config user.name "$USERNAME"
+git config user.email "$INPUT_EMAIL"
+git config user.name "$INPUT_USERNAME"
 
-node_modules/.bin/lerna publish $LERNA_ARGUMENTS --registry=$REGISTRY --yes $BUMP_VERSION
+node_modules/.bin/lerna publish $INPUT_EXTRA_ARGUMENTS --registry=$INPUT_REGISTRY --yes $INPUT_BUMP
