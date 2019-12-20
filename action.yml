@@ -7,10 +7,11 @@ inputs:
   registry:
     description: "Registery where to publish"
     default: "https://registry.npmjs.org/"
+    required: false
+  extra_arguments:
+    description: "Extra arguments for Lerna"
+    required: false
 outputs: {}
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.bump }}
-    - ${{ inputs.registry }}
