@@ -16,9 +16,11 @@ fi
 # The script is run as root so we need to allow npm to execute scripts as root.
 echo "unsafe-perm = true" >> ~/.npmrc
 
-# Setup git
+# Setup git and pull tags for Lerna
 
 git config user.email "$INPUT_EMAIL"
 git config user.name "$INPUT_USERNAME"
+
+git fetch --tags
 
 node_modules/.bin/lerna publish $INPUT_EXTRA_ARGUMENTS --registry=$INPUT_REGISTRY --yes $INPUT_BUMP
