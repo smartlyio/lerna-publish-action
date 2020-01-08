@@ -8,10 +8,19 @@ then
     exit -1
 fi
 
+# Setup authentication for npm
+
 if [ -n "$AUTH_TOKEN_STRING" ]
 then
     echo $AUTH_TOKEN_STRING >> ~/.npmrc
 fi
+
+# Setup SSH keys so we can push lerna commits and tags to master branch
+
+mkdir -p ~/.ssh
+ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
+echo "$GIT_DEPLOY_KEY" > ~/.ssh/id_rsa
+chmod 400 ~/.ssh/id_rsa
 
 # The script is run as root so we need to allow npm to execute scripts as root.
 echo "unsafe-perm = true" >> ~/.npmrc
