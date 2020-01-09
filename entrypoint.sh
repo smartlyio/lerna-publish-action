@@ -30,6 +30,8 @@ echo "unsafe-perm = true" >> ~/.npmrc
 git config user.email "$INPUT_EMAIL"
 git config user.name "$INPUT_USERNAME"
 
+cat ~/.ssh/known_hosts
+
 git remote set-url origin git@github.com:$GITHUB_REPOSITORY.git
 git fetch --unshallow --tags
 
