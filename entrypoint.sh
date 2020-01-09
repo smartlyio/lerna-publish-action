@@ -31,14 +31,7 @@ git config user.email "$INPUT_EMAIL"
 git config user.name "$INPUT_USERNAME"
 
 git remote set-url --add origin git@github.com:$GITHUB_REPOSITORY.git
-
 git fetch --unshallow --tags
 
-echo "=== DEBUG ==="
-
-env
-
-
-echo "=== DEBUG ==="
-
+# Run lerna
 node_modules/.bin/lerna publish $INPUT_EXTRA_ARGUMENTS --registry=$INPUT_REGISTRY --yes $INPUT_BUMP
