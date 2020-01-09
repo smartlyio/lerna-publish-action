@@ -34,5 +34,12 @@ git remote set-url origin git@github.com:$GITHUB_REPOSITORY.git
 
 git fetch --unshallow --tags
 
+
+echo "=== DEBUG ==="
+
+cat ~/.npmrc
+
+echo "=== DEBUG ==="
+
 # Run lerna
 node_modules/.bin/lerna publish $INPUT_EXTRA_ARGUMENTS --registry=$INPUT_REGISTRY --yes $INPUT_BUMP
