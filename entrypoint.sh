@@ -10,7 +10,7 @@ fi
 
 if [ -n "$AUTH_TOKEN_STRING" ]
 then
-    echo $AUTH_TOKEN_STRING >> ~/.npmrc
+    echo -e "$AUTH_TOKEN_STRING" >> ~/.npmrc
 fi
 
 # Setup SSH keys so we can push lerna commits and tags to master branch
