@@ -35,7 +35,6 @@ git fetch --unshallow --tags
 
 echo "=== DEBUG ==="
 
-env
 cat ~/.npmrc
 
 echo "=== DEBUG ==="
