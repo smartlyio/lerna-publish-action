@@ -30,7 +30,7 @@ echo "unsafe-perm = true" >> ~/.npmrc
 git config user.email "$INPUT_EMAIL"
 git config user.name "$INPUT_USERNAME"
 
-git remote set-url --add origin git@github.com:$GITHUB_REPOSITORY.git
+git remote set-url origin git@github.com:$GITHUB_REPOSITORY.git
 git fetch --unshallow --tags
 
 # Run lerna
