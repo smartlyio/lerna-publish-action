@@ -18,7 +18,6 @@ fi
 # Setup SSH keys so we can push lerna commits and tags to master branch
 
 mkdir -p ~/.ssh
-ssh-keygen -R domain.com
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 echo "$GIT_DEPLOY_KEY" > ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
@@ -34,6 +33,9 @@ git config user.name "$INPUT_USERNAME"
 cat ~/.ssh/known_hosts
 
 git remote set-url origin git@github.com:$GITHUB_REPOSITORY.git
+
+ssh -vvvv git@github.com
+
 git fetch --unshallow --tags
 
 # Run lerna
