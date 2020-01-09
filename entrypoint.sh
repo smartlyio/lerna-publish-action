@@ -32,8 +32,6 @@ git config user.name "$INPUT_USERNAME"
 
 git remote set-url origin git@github.com:$GITHUB_REPOSITORY.git
 
-ssh -vvvv git@github.com
-
 git fetch --unshallow --tags
 
 # Run lerna
