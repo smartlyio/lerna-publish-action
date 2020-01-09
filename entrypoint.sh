@@ -32,14 +32,11 @@ git config user.name "$INPUT_USERNAME"
 
 git fetch --unshallow --tags
 
-echo "=== DEBUG START ==="
+echo "=== DEBUG ==="
 
-ls -l .git/refs/tags
+env
 
-git tag
 
-git log --oneline
-
-echo "=== DEBUG END   ==="
+echo "=== DEBUG ==="
 
 node_modules/.bin/lerna publish $INPUT_EXTRA_ARGUMENTS --registry=$INPUT_REGISTRY --yes $INPUT_BUMP
