@@ -30,7 +30,7 @@ echo "unsafe-perm = true" >> ~/.npmrc
 git config user.email "$INPUT_EMAIL"
 git config user.name "$INPUT_USERNAME"
 
-git fetch --tags
+git fetch --unshallow --tags
 
 echo "=== DEBUG START ==="
 
