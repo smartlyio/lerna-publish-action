@@ -18,6 +18,7 @@ fi
 # Setup SSH keys so we can push lerna commits and tags to master branch
 
 mkdir -p ~/.ssh
+ssh-keygen -R domain.com
 ssh-keyscan -t rsa github.com > ~/.ssh/known_hosts
 echo "$GIT_DEPLOY_KEY" > ~/.ssh/id_rsa
 chmod 400 ~/.ssh/id_rsa
