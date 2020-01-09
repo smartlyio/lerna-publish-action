@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -euo pipefail
-
 if [ -z "$INPUT_BUMP" ]
 then
     echo "bump input not specified."
