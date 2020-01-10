@@ -13,12 +13,11 @@ environment variable. This workaround can be removed once the limitation with pr
 
 ## Input arguments
 
-- 
-- `BUMP_VERSION` (**required**): Semantic version to bump. Possible values: `major|minor|patch`.
-- `REGISTRY` (default: https://registry.npmjs.org): Custom registry where to publish the packages.
-- `EMAIL` (default: `bot@lerna-publish-action`): Email to use in lerna commits.
-- `USERNAME` (default: `lerna publish action bot`): User name to use in lerna commits.
-- `EXTRA_ARGUMENTS`: Extra arguments passed to lerna publish command.
+- `bump` (**required**): Semantic version to bump. Possible values: `major|minor|patch`.
+- `registry` (default: https://registry.npmjs.org): Custom registry where to publish the packages.
+- `email` (default: `bot@lerna-publish-action`): Email to use in lerna commits.
+- `username` (default: `lerna publish action bot`): User name to use in lerna commits.
+- `extra_arguments`: Extra arguments passed to lerna publish command.
 
 ## Environment variables
 
