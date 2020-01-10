@@ -8,11 +8,12 @@ then
     exit -1
 fi
 
-# Setup authentication for npm
+# Setup authentication for npm and mark the file as non-changed
 
 if [ -n "$AUTH_TOKEN_STRING" ]
 then
     echo -e "$AUTH_TOKEN_STRING" >> .npmrc
+    git update-index --assume-unchanged .npmrc
 fi
 
 # Setup SSH keys so we can push lerna commits and tags to master branch
